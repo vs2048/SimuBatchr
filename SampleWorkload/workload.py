@@ -1,10 +1,19 @@
 # This is a sample workload to test SimuBatchr
 #
-# It just spins for a random amount of time
+# It just waits for a specified amount of time
 
-def RunTest(identifier, nTests):
-    pass
+import argparse, time
 
+# Print the identifier and delay for a specified amount of time
+def RunTest(identifier, tDelay):
+    print("Starting task " + identifier + " to run for " + str(tDelay) + "s")
+    time.sleep(tDelay)
+    print("Task " + identifier + " complete")
 
+# Parse the arguments and launch
 if __name__ == "__main__":
-    print("Running workload\n")
+    args = argparse.ArgumentParser()
+    args.add_argument("-time", help="How long this task will run (s)", default=10, type=int)
+    args.add_argument("-name", help="The name of this process", type=str, default="Unnamed Workload")
+    args = args.parse_args()
+    RunTest(args.name, args.time)
