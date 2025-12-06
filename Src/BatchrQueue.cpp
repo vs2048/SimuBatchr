@@ -13,7 +13,8 @@ void BatchrQueue::AddTask(BatchrTask task) {
 
 BatchrTask BatchrQueue::GetTask() {
     ListMutex.lock();
-    BatchrTask tmp = Tasks.pop_back();
+    BatchrTask tmp = Tasks.back();
+    Tasks.pop_back();
     ListMutex.unlock();
     return tmp;
 };

@@ -6,6 +6,9 @@
 #include <vector>
 #include "BatchrTask.h"
 
+#ifndef BATCHRQUEUE
+#define BATCHRQUEUE
+
 using namespace std;
 
 class BatchrQueue {
@@ -18,3 +21,5 @@ class BatchrQueue {
         size_t NumTasks();
         bool IsEmpty();
 };
+
+#endif
