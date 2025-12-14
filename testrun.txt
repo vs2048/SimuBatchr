@@ -1,0 +1,6 @@
+python3 ./SampleWorkload/ 1240
+python3 ./SampleWorkload/ 3434
+python3 ./SampleWorkload/ 3434
+python3 ./SampleWorkload/ 1240
+python3 ./SampleWorkload/ 4343
+python3 ./SampleWorkload/ 2324
